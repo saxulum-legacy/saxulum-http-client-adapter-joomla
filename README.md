@@ -49,5 +49,8 @@ $http = new Http($options, $transport);
 $httpClient = new HttpClient($http);
 ```
 
+*IMPORTANT*: The response protocol version is a fake, based on the request ones.
+Cause this http client does not support to set em.
+
 [1]: https://packagist.org/packages/joomla/http
 [2]: https://packagist.org/packages/saxulum/saxulum-http-client-adapter-joomla
