@@ -136,7 +136,7 @@ class HttpClient implements HttpClientInterface
     }
 
     /**
-     * @param $statusCode
+     * @param int $statusCode
      * @return string
      * @throws \Exception
      */
@@ -159,7 +159,7 @@ class HttpClient implements HttpClientInterface
     }
 
     /**
-     * @param $statusCode
+     * @param int $statusCode
      * @return string
      */
     protected static function getCodeConstantName($statusCode)
