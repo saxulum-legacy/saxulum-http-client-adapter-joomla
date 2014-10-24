@@ -1,0 +1,26 @@
+{
+  "name": "saxulum/saxulum-http-client-adapter-joomla",
+  "description": "Saxulum Http Client Adapter Joomla",
+  "keywords": ["saxulum", "http", "http-client", "client", "adapter", "joomla"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dominik Zogg",
+      "email": "dominik.zogg@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3",
+    "joomla/http": "~1.1,>=1.1.4",
+    "saxulum/saxulum-http-client-interface": "~1.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "provide": {
+    "saxulum/saxulum-http-client-adapter": "1.0"
+  },
+  "autoload": {
+    "psr-4": { "Saxulum\\HttpClient\\Joomla\\": "src/" }
+  }
+}
