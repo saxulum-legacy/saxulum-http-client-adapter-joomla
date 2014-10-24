@@ -127,10 +127,11 @@ class HttpClient implements HttpClientInterface
      * @param  Request        $request
      * @return JoomlaResponse
      */
-    protected function path(Request $request)
+    protected function patch(Request $request)
     {
         return $this->http->patch(
             (string) $request->getUrl(),
+            $request->getContent(),
             $request->getHeaders()
         );
     }
