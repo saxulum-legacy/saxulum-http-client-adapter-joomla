@@ -94,7 +94,7 @@ class HttpClient implements HttpClientInterface
         return $this->http->post(
             (string) $request->getUrl(),
             $request->getContent(),
-            $request->getHeaders()
+            $this->prepareHeaders($request)
         );
     }
 
@@ -107,7 +107,7 @@ class HttpClient implements HttpClientInterface
         return $this->http->put(
             (string) $request->getUrl(),
             $request->getContent(),
-            $request->getHeaders()
+            $this->prepareHeaders($request)
         );
     }
 
@@ -132,8 +132,23 @@ class HttpClient implements HttpClientInterface
         return $this->http->patch(
             (string) $request->getUrl(),
             $request->getContent(),
-            $request->getHeaders()
+            $this->prepareHeaders($request)
         );
+    }
+
+    /**
+     * @param  Request $request
+     * @return array
+     */
+    protected function prepareHeaders(Request $request)
+    {
+        $headers = $request->getHeaders();
+
+        if (null !== $request->getContent() && !isset($headers['Content-Type'])) {
+            $headers['Content-Type'] = 'application/x-www-form-urlencoded';
+        }
+
+        return $headers;
     }
 
     /**
