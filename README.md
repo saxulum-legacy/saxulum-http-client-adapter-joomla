@@ -35,7 +35,7 @@ $response = $httpClient->request(new Request(
 ));
 ```
 
-You can inject your own joomla browser instance while creating the http client instance.
+You can inject your own joomla http instance while creating the http client instance.
 
 ``` {.php}
 use Joomla\Http\Http;
