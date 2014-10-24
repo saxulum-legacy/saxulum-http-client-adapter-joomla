@@ -42,10 +42,10 @@ use Joomla\Http\Http;
 use Joomla\Http\Transport\Stream as StreamTransport;
 use Saxulum\HttpClient\Joomla\HttpClient;
 
-
 $options = array();
 $transport = new StreamTransport($options);
 $http = new Http($options, $transport);
+
 $httpClient = new HttpClient($http);
 ```
 
