@@ -12,7 +12,7 @@
   "require": {
     "php": ">=5.3",
     "joomla/http": "~1.1,>=1.1.4",
-    "saxulum/saxulum-http-client-interface": "~1.2"
+    "saxulum/saxulum-http-client-interface": "~1.5"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0"

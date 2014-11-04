@@ -158,20 +158,20 @@ class HttpClient implements HttpClientInterface
      */
     protected static function getStatusMessage($statusCode)
     {
-        static $reflectionHttpClientInterface;
+        static $reflectionResponse;
 
-        if (null === $reflectionHttpClientInterface) {
-            $httpClientInterface = 'Saxulum\HttpClient\HttpClientInterface';
-            $reflectionHttpClientInterface = new \ReflectionClass($httpClientInterface);
+        if (null === $reflectionResponse) {
+            $responseClass = 'Saxulum\HttpClient\Response';
+            $reflectionResponse = new \ReflectionClass($responseClass);
         }
 
         $constantName = self::getCodeConstantName($statusCode);
 
-        if (!$reflectionHttpClientInterface->hasConstant($constantName)) {
+        if (!$reflectionResponse->hasConstant($constantName)) {
             throw new \Exception("Unknown status code {$statusCode}!");
         }
 
-        return $reflectionHttpClientInterface->getConstant($constantName);
+        return $reflectionResponse->getConstant($constantName);
     }
 
     /**
@@ -180,6 +180,6 @@ class HttpClient implements HttpClientInterface
      */
     protected static function getCodeConstantName($statusCode)
     {
-        return 'CODE_' . $statusCode;
+        return 'STATUS_MESSAGE_' . $statusCode;
     }
 }
