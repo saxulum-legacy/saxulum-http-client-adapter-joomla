@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "php": ">=5.3",
+    "php": ">=5.3,<8.0",
     "joomla/http": "~1.1,>=1.1.4",
     "saxulum/saxulum-http-client-interface": "~1.5"
   },
