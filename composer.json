@@ -22,5 +22,6 @@
   },
   "autoload": {
     "psr-4": { "Saxulum\\HttpClient\\Joomla\\": "src/" }
-  }
+  },
+  "abandoned": true
 }
